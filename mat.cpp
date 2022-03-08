@@ -39,8 +39,15 @@ namespace ariel
 
     string mat(int width, int length, char symbol1, char symbol2) //create the matrix, call other functions, delete matrix and return the string answer.
     {
+        if(width < 0 || length < 0)
+        {
+            throw invalid_argument( "mat size can't be negative" );
+        }
+
         if(width%2 == 0 || length%2 == 0)
-            throw ("Mat size is always odd");
+        {
+            throw invalid_argument( "mat size is always add" );
+        }
         
         if(width == 1)
         {
